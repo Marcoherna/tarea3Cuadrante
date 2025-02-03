@@ -42,96 +42,69 @@ class MainActivity : ComponentActivity() {
 fun CuatroCuadrantes() {
     Column(modifier = Modifier.fillMaxSize()) {
         Row(modifier = Modifier.weight(1f)) {
-            Box(
-                modifier = Modifier
+            Boxes(
+                "Text composable",
+                "Displays text and follows the recommended Material Design guidelines.",
+                Modifier
                     .fillMaxHeight()
                     .weight(1f)
                     .background(Color(0xFFEADDFF))
-                    .padding(16.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text(
-                        text = "Text composable",
-                        modifier = Modifier.padding(bottom = 16.dp),
-                        fontWeight = FontWeight.Bold,
-                        color = Color.Black
-                    )
-                    Text(
-                        text = "Displays text and follows the recommended Material Design guidelines.",
-                        textAlign = TextAlign.Justify,
-                        color = Color.Black
-                    )
-                }
-            }
-            Box(
-                modifier = Modifier
+                    .padding(16.dp)
+            )
+            Boxes(
+                "Image composable",
+                "Creates a composable that lays out and draws a given Painter class object.",
+                Modifier
                     .fillMaxHeight()
                     .weight(1f)
                     .background(Color(0xFFD0BCFF))
-                    .padding(16.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(
-                            text = "Image composable",
-                            modifier = Modifier.padding(bottom = 16.dp),
-                            fontWeight = FontWeight.Bold,
-                            color = Color.Black
-                        )
-                        Text(
-                            text = "Creates a composable that lays out and draws a given Painter class object.",
-                            textAlign = TextAlign.Justify,
-                            color = Color.Black
+                    .padding(16.dp)
+            )
 
-                        )
-                    }
-                    }
         }
         Row(modifier = Modifier.weight(1f)) {
-            Box(
-                modifier = Modifier
+            Boxes(
+                "Row composable"
+                , "A layout composable that places its children in a horizontal sequence.",
+                Modifier
                     .fillMaxHeight()
                     .weight(1f)
                     .background(Color(0xFFB69DF8))
-                    .padding(16.dp),
-                contentAlignment = Alignment.Center) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text(
-                        text = "Row composable",
-                        modifier = Modifier.padding(bottom = 16.dp),
-                        fontWeight = FontWeight.Bold,
-                        color = Color.Black
-                    )
-                    Text(
-                        text = "A layout composable that places its children in a horizontal sequence.",
-                        textAlign = TextAlign.Justify,
-                        color = Color.Black
-                    )
-
-                }
-            }
-            Box(
-                modifier = Modifier
+                    .padding(16.dp)
+            )
+            Boxes(
+                "Column composable",
+                "A layout composable that places its children in a vertical sequence.",
+                Modifier
                     .fillMaxHeight()
                     .weight(1f)
                     .background(Color(0xFFF6EDFF))
-                    .padding(16.dp),
-                contentAlignment = Alignment.Center) {
-                Column {
-                    Text(
-                        text = "Column composable",
-                        modifier = Modifier.padding(bottom = 16.dp),
-                        fontWeight = FontWeight.Bold,
-                        color = Color.Black
-                    )
-                    Text(
-                        text = "A layout composable that places its children in a vertical sequence.",
-                        textAlign = TextAlign.Justify,
-                        color = Color.Black
-                    )
-                }
-            }
+                    .padding(16.dp)
+            )
+
+        }
+    }
+
+}
+
+@Composable
+fun Boxes(titulo: String, descripcion: String, modifier: Modifier = Modifier) {
+    Box(
+        modifier = modifier,
+        contentAlignment = Alignment.Center) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(
+                text = titulo,
+                modifier = Modifier.padding(bottom = 16.dp),
+                fontWeight = FontWeight.Bold,
+                color = Color.Black
+            )
+            Text(
+                text = descripcion,
+                textAlign = TextAlign.Justify,
+                color = Color.Black
+            )
+
         }
     }
 
